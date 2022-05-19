@@ -1,0 +1,46 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+:host {
+    display: block;
+}
+
+.top-navitation {
+    @include flex-between(row);
+    background-color: $brand-header-bg-color;
+    font-size: 0.85rem;
+    color: black;
+    padding: 2px;
+
+    .navitations {
+        @include  flex-align-center;
+
+        .navitation-items, .navitation-list {
+            @include  flex-align-center;
+            flex-wrap: wrap;
+        }
+    }
+
+    a {
+        padding: 0 0.3rem;
+        text-decoration: unset;
+        color: black;
+    }
+
+    .logo {
+       border: 1px solid white;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .top-navitation {
+        .navitation-list {
+            display: unset!important;
+
+            a {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}

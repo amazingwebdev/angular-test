@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/index';
+
+body {
+    margin: 0.4rem 10%;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+
+@media (max-width: 750px) {
+    body {
+        margin: unset;
+    }
+}

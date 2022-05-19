@@ -1,0 +1,91 @@
+
+@mixin flex-layout($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flex-layout-pos($jc-value, $ai-value) {
+    justify-content: $jc-value;
+    align-items: $ai-value;
+}
+
+@mixin flex-center($direction: row) {
+    @include flex-layout($direction);
+    @include flex-layout-pos(center, center);
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-between($direction) {
+    @include flex-layout($direction);
+    @include flex-layout-pos(space-between, center);
+}
+
+@mixin vote-arrow {
+    .vote-arrow {
+        width: 10px;
+        height: 10px;
+        border: 0px;
+        margin: 3px 4px 2px 2px;
+        background: url('../images/grayarrow.gif') no-repeat;
+    }
+   
+}
+
+@mixin loading {
+    .loading {
+        @include flex-center;
+        height: 100%;
+        font-weight: bold;
+    }
+}
+
+@mixin story-item($main-title-size: 0.85rem, $sub-title-size: 0.67rem) {
+    .story-item {
+        @include vote-arrow;
+
+        display: flex;
+        align-items: flex-start;
+        padding: 0.3rem 0.4rem;
+    
+        .story-key {
+            @include  flex-center(row);
+        }
+    
+        .story-number {
+            color: $brand-subtext-color;
+            font-size: $main-title-size;
+        }
+    
+        .story-details, .story-site {
+            font-size: $sub-title-size;
+            color: $brand-subtext-color;
+        }
+    
+        .story-site {
+            font-size: $sub-title-size;
+        }
+    
+        .story-main {
+            margin-bottom: 0.2rem;
+    
+            .story-title {
+                color: black;
+                font-size: $main-title-size;
+            }
+        }
+        
+        a {
+            color: $brand-subtext-color;
+            text-decoration: unset;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+  
+}

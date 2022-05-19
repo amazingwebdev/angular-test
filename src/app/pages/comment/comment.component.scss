@@ -1,0 +1,52 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+@include vote-arrow;
+@include loading;
+@include story-item;
+
+.leave-comment {
+    padding: 1rem 1.3rem 3.5rem;
+
+    button {
+        margin-top: 1rem;
+    }
+}
+
+.comment-item {
+    padding: 0.3rem 0.4rem 0;
+
+    &__header {
+        @include  flex-align-center;
+        font-size: 0.67rem;
+        color: $brand-subtext-color;
+
+        span {
+            margin-right: 0.2rem;
+        }
+    }
+
+    &__text {
+        color: black;
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem 0;
+    }
+}
+
+@media (max-width: 750px) {
+    @include story-item(1rem, 0.85rem);
+    
+    textarea {
+        width: 80%;
+    }
+
+    .comment-item {
+        &__header {
+            font-size: 0.7rem;
+        }
+
+        &__text {
+            font-size: 0.85rem;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+:host {
+    display: block;
+}
+
+.footer-bar {
+    @include flex-center(column);
+    background-color: $brand-main-bg-color;
+    border-top: 2px solid $brand-header-bg-color;
+    padding: 1rem 0;
+
+    .footer-items {
+        @include flex-center;
+        flex-wrap: wrap;
+        a {
+            color: black;
+            padding: 0 0.3rem;
+            text-decoration: unset;
+            font-size: 0.7rem;
+        }
+    }
+
+    .search-bar {
+        @include flex-align-center;
+        margin-top: 0.7rem;
+        color: $brand-subtext-color;
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+
+        .search-label {
+            margin-right: 0.2rem;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .search-bar {
+        width: 95%;
+        
+        input {
+            flex: 1;
+        }
+    }
+}
+
+@media (max-width: 576px) { 
+    .search-bar {
+        flex-direction: column;
+
+        input {
+            width: 95%;
+            margin-top: 0.2rem;
+        }
+    }
+}

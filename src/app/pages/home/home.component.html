@@ -1,0 +1,16 @@
+<div class="story-item" *ngFor="let story of stories; index as idx">
+    <div class="story-key">
+        <span class="story-number">{{ idx + 1 }}.</span>
+        <div class="vote-arrow"></div>
+    </div>
+    <div>
+        <div class="story-main">
+            <span class="story-title">{{ story.title }} </span>
+            <span class="story-site"> ({{ story.website }})</span>
+        </div>
+        <div class="story-details">	{{ story.score }} points by {{ story.by }} {{ story.time * 1000 | timeago}} | hide | <a [routerLink]="['item']" [queryParams]="{id: story.id}">{{ story.descendants }} comment{{ story.descendants > 1 ? 's' : '' }}</a></div>
+    </div>
+</div>
+<div class="loading" *ngIf="loading">
+    Loading ...
+</div>
